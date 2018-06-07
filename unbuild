@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+#
+# find all html files in the ./dist directory and patch the original
+# template files.
+
+for html in $(find dist -name *.html); do
+    template=$(sed -r -e 's:/(.*!/)?index\.html:\1\.mustache:' -e 's:^dist:templates:' <<<$html)
+
+    if [[ $template == "templates.mustache" ]]; then
+        template=templates/index.mustache
+    fi
+
+    if [[ ! -f $template ]]; then
+        echo "There is no such file $template. Abort."
+        exit 1
+    fi
+
+    content=`mktemp --tmpdir=.`
+
+    sed -n '/<!-- CONTENT-STARTS -->/,/<!-- CONTENT-ENDS -->/p' $html \
+        | grep -Ev '<!-- CONTENT-(STARTS|ENDS) -->' > $content
+
+    sed -i '${/^$/d;}' $content
+
+    diff -u $template $content > "$content.patch"
+
+    if [[ -s "$content.patch" ]]; then
+        cat "$content.patch"
+
+        echo "Apply patch? (y/N)"
+        read answer
+
+        if [[ $answer == "y" ]]; then
+            patch -sf -o $template < "$content.patch"
+        else
+            echo "Skipping patch..."
+        fi
+    fi
+
+    rm $content "$content.patch"
+
+    git diff $template
+    # diff $html <(sed -r -e 's:\.html$:\.template' -e 's:^dist:templates' <<<$html)
+done
+
+# while read path; do
+#     echo "-> $path"
+#     html=$(sed -r 's:.template$/.html' <<<$path)
+# done <routes.tsv

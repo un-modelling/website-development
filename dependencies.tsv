@@ -1,0 +1,20 @@
+d3.js	https://d3js.org/d3.v5.min.js
+jquery.js	https://code.jquery.com/jquery-3.1.1.min.js
+location.js	https://raw.githubusercontent.com/svexican/web-extras/master/dist/location.js
+require.js	http://requirejs.org/docs/release/2.3.5/minified/require.js
+js-extras.js	https://raw.githubusercontent.com/svexican/js-extras/master/dist/js-extras.js
+
+flags/mexico.svg	https://cdn.rawgit.com/mledoze/countries/860602cb/data/mex.svg
+flags/bolivia.svg	https://cdn.rawgit.com/mledoze/countries/860602cb/data/bol.svg
+flags/costa-rica.svg	https://cdn.rawgit.com/mledoze/countries/860602cb/data/cri.svg
+flags/ghana.svg	https://cdn.rawgit.com/mledoze/countries/860602cb/data/gha.svg
+flags/kyrgyz-republic.svg	https://cdn.rawgit.com/mledoze/countries/860602cb/data/kgz.svg
+flags/paraguay.svg	https://cdn.rawgit.com/mledoze/countries/860602cb/data/pry.svg
+flags/mongolia.svg	https://cdn.rawgit.com/mledoze/countries/860602cb/data/mng.svg
+flags/uganda.svg	https://cdn.rawgit.com/mledoze/countries/860602cb/data/uga.svg
+flags/vietnam.svg	https://cdn.rawgit.com/mledoze/countries/860602cb/data/vnm.svg
+
+fonts/garamond.woff2	https://fonts.gstatic.com/s/ebgaramond/v9/SlGUmQSNjdsmc35JDF1K5GR1SDk.woff2
+fonts/roboto.woff2	https://fonts.gstatic.com/s/roboto/v18/CWB0XYA8bzo0kSThX0UTuA.woff2
+fonts/roboto-bold.woff2	https://fonts.gstatic.com/s/roboto/v18/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2
+fonts/roboto-light.woff2	https://fonts.gstatic.com/s/roboto/v18/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2
